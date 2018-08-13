@@ -1,6 +1,8 @@
+<?php error_reporting(0); ?>
 <!DOCTYPE HTML>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Blogger Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android  Compatible web template, 
@@ -72,8 +74,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="cl-effect-16">
 						<li><a href="index.php" data-hover="HOME">Home</a></li> 
 						<li><a href="upload.php" data-hover="Upload Stories">Upload Stories</a></li>
-						<li><a href="login.php" data-hover="Login">Login</a></li>
+						
+						<?php 
+						session_start();
+						if (isset($_SESSION["user_id"])) {
+							# code...
+							echo '<li><a href="logout.php" data-hover="Logout">Logout</a></li>';
+						}
+						else {
+						echo '<li><a href="login.php" data-hover="Login">Login</a></li>';	 
+						}
+
+						 ?>
 						<li><a href="registration.php" data-hover="Register">Register</a></li>
+						<li><a href="registration.php" data-hover="Register"></a></li>
+						<li><a href="registration.php" data-hover="Register"></a></li>
 					</ul>
 					<!-- script-for-nav -->
 					<script>
@@ -185,6 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
      <div class="clearfix"> </div>
 	<!--/footer-->
+		<!--/footer-->
 	     <div class="footer">
 				 <div class="footer-top">
 				    <div class="col-md-4 footer-grid">
@@ -212,7 +228,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 </div>
 	         </div>
 		<div class="copy">
-		    <p>&copy; 2018 Broken Typewritters. All Rights Reserved</p>
+		    <p>&copy; 2016 Blogger. All Rights Reserved  </p>
 		</div>
 	 <div class="clearfix"> </div>
 	</div>
@@ -241,11 +257,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 </html>
 <style>
-	
+	@media (max-width: 1366px) and (min-width: 481px) 
+	{
 .top-nav.gallery-sec {
     float: left;
     width: 15%;
-    padding: 3em 1em 28.55em 1em;
-    height: 70em;
+    padding: 3em 1em 34.1em 1em;
+}
 }
 </style>
